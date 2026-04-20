@@ -131,3 +131,72 @@ J’ai supprimé le volume mes-donnees avec la commande docker volume rm mes-don
  
 
 Exo 4
+
+4.1
+<img width="689" height="284" alt="image" src="https://github.com/user-attachments/assets/71c09f25-d21f-4070-a912-ddb7a526aa2a" />
+
+Les trois réseaux Docker créés par défaut sont bridge, host et none.
+ 
+4.2
+<img width="945" height="64" alt="image" src="https://github.com/user-attachments/assets/12c31583-15be-4644-82e3-d83a3a1339a8" />
+
+ 
+4.3
+ <img width="945" height="79" alt="image" src="https://github.com/user-attachments/assets/7a39ce37-3b4f-4677-a71d-e000ee9d985d" />
+
+4.4
+<img width="945" height="567" alt="image" src="https://github.com/user-attachments/assets/e04735fc-9897-4d02-8b07-e55954e93ad8" />
+
+Depuis le conteneur client connecté au même réseau, j’ai récupéré la page par défaut de Nginx. Il est possible d’utiliser directement le nom serveur-web à la place d’une adresse IP, car Docker fournit une résolution DNS automatique entre les conteneurs connectés à un même réseau personnalisé.
+ 
+4.5
+<img width="945" height="295" alt="image" src="https://github.com/user-attachments/assets/3b50ad61-2061-4aaf-af0d-3d9332b6c3ea" />
+
+Depuis le conteneur client-externe, qui n’était pas connecté au réseau mon-reseau, la communication avec serveur-web par son nom a échoué. Cela s’explique par le fait que ce conteneur n’était pas sur le même réseau et ne pouvait donc pas résoudre ce nom.
+
+ 
+4.6
+<img width="945" height="49" alt="image" src="https://github.com/user-attachments/assets/956781fe-5312-404d-a0b8-9bd8e0f2b369" />
+
+Il est possible de connecter un conteneur déjà démarré à un réseau Docker après son lancement.
+ 
+4.7
+<img width="945" height="241" alt="image" src="https://github.com/user-attachments/assets/47a3d92a-bff5-4a0b-aa28-7446718dd1c7" />
+
+
+ 
+
+Exo 5
+
+5.1
+<img width="884" height="497" alt="image" src="https://github.com/user-attachments/assets/63a13cb9-dbff-4b85-a22b-95cbf288e6af" />
+
+ 
+5.2
+J’ai créé le fichier requirements.txt avec Flask 3.0.3 comme unique dépendance.
+5.3
+Cet ordre est important car il permet à Docker de réutiliser le cache pour l’installation des dépendances tant que requirements.txt ne change pas. Si seul le code source change, Docker n’a pas besoin de réinstaller les dépendances..
+5.4
+
+<img width="945" height="479" alt="image" src="https://github.com/user-attachments/assets/68fb5095-fd5b-463b-a5df-4db327b0108b" />
+
+ 
+5.5
+ 
+ <img width="945" height="480" alt="image" src="https://github.com/user-attachments/assets/7a44b59e-3aa6-4a27-9ef0-77e524d35e5d" />
+
+ <img width="945" height="481" alt="image" src="https://github.com/user-attachments/assets/0cca1f93-bab6-4f7e-86bb-f8bb09d546b7" />
+
+
+ 
+5.6
+<img width="945" height="442" alt="image" src="https://github.com/user-attachments/assets/aaa00ec2-1d92-4fe3-83e9-45d62f217480" />
+
+ 
+En relançant le conteneur sans passer la variable APP_ENV, la valeur affichée est développement. Cette valeur provient de la valeur par défaut définie dans le code de l’application.
+5.7
+<img width="945" height="111" alt="image" src="https://github.com/user-attachments/assets/d91ded9c-99fc-4e58-9aea-8f864513796b" />
+
+ 
+J’ai affiché la taille de l’image avec docker images. Pour réduire davantage la taille de l’image, il serait possible d’utiliser un multi-stage build et un fichier .dockerignore.
+
