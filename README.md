@@ -174,8 +174,11 @@ Exo 5
  
 5.2
 J’ai créé le fichier requirements.txt avec Flask 3.0.3 comme unique dépendance.
+
 5.3
+
 Cet ordre est important car il permet à Docker de réutiliser le cache pour l’installation des dépendances tant que requirements.txt ne change pas. Si seul le code source change, Docker n’a pas besoin de réinstaller les dépendances..
+
 5.4
 
 <img width="945" height="479" alt="image" src="https://github.com/user-attachments/assets/68fb5095-fd5b-463b-a5df-4db327b0108b" />
@@ -194,6 +197,8 @@ Cet ordre est important car il permet à Docker de réutiliser le cache pour l�
 
  
 En relançant le conteneur sans passer la variable APP_ENV, la valeur affichée est développement. Cette valeur provient de la valeur par défaut définie dans le code de l’application.
+
+
 5.7
 <img width="945" height="111" alt="image" src="https://github.com/user-attachments/assets/d91ded9c-99fc-4e58-9aea-8f864513796b" />
 
