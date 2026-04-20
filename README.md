@@ -44,7 +44,7 @@ EXO 2
 2.1
 <img width="589" height="325" alt="image" src="https://github.com/user-attachments/assets/9cd727b7-efcb-4d14-86eb-b5e42fddb210" />
 
-Création du fichier index.html avec une structure HTML minimale, contenant le titre “Ma première image Docker” et un titre principal <h1> avec mon prénom.
+Création du fichier index.html avec une structure HTML minimale, contenant le titre “Ma première image Docker” et un titre principal <h 1> avec mon prénom.
  
 2.2
 <img width="945" height="60" alt="image" src="https://github.com/user-attachments/assets/ce171008-d3b1-4a45-a82e-7597359fced9" />
